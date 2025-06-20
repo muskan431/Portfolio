@@ -1,0 +1,214 @@
+:root {
+  --bg: #0d0d0d;
+  --card-bg: #1a1a1a;
+  --text: #fff;
+  --accent: #7873f5;
+}
+
+body {
+  margin: 0;
+  padding-bottom: 60px;
+  background: var(--bg);
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  overflow: hidden;
+}
+
+header {
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideDown 1.2s ease forwards;
+}
+
+header div {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #f2ecf0;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li a:hover {
+  color: #fff;
+  transform: scale(1.05);
+}
+
+h1 {
+  text-align: center;
+  font-size: 48px;
+  margin: 30px 30px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #7873f5, #ff6ec4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  animation: scrollReel 35s linear infinite;
+  width: max-content;
+}
+
+@keyframes scrollReel {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.project-card {
+  background: var(--card-bg);
+  width: 340px;
+  height: 440px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform: scale(0.95) rotateY(2deg);
+}
+
+.project-card:hover {
+  transform: scale(1.05) rotateY(0deg);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 240px;
+}
+
+.project-info h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.project-info p {
+  font-size: 13px;
+  color: #bbb;
+  line-height: 1.6;
+  margin-bottom: auto;
+}
+
+.project-info a {
+  display: inline-block;
+  margin-top: 16px;
+  margin-bottom: 18px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #7873f5, #ff6ec4);
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+}
+
+.project-info a:hover {
+  background: linear-gradient(135deg, #ff6ec4, #7873f5);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.15);
+}
+
+.carousel-wrapper::before,
+.carousel-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.carousel-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg), transparent);
+}
+
+.carousel-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg), transparent);
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    width: 280px;
+    height: 400px;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 36px;
+    margin-top: 40px;
+  }
+
+  .carousel-track {
+    gap: 20px;
+    padding: 40px 0;
+  }
+}
