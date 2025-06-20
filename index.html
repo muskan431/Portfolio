@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+      color: #f2f2f2;
+      background: linear-gradient(-45deg, #2e2e2e, #1a1a1a, #3a3a3a, #0d0d0d);
+      background-size: 400% 400%;
+      animation: gradientShift 5s ease-in-out infinite;
+      cursor: pointer;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    #greeting {
+      font-size: 3.5rem;
+      font-weight: 600;
+      text-align: center;
+      opacity: 0;
+      transform: scale(0.9);
+      animation: fadeInZoom 0.3s ease forwards;
+      letter-spacing: 1.2px;
+      color: #f0f0f0;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.04);
+    }
+
+    @keyframes fadeInZoom {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+  </head>
+  <body>
+
+  <div id="greeting">Welcome</div>
+
+  <script>
+  const greetings = [
+    "Hello!",
+    "Namaste!",
+    "Hola!",
+    "Bonjour!",
+    "Ciao!",
+    "Olá!",
+    "Konnichiwa!",
+    "Salaam!",
+    "Nǐ hǎo!",
+    "Vanakkam!",
+    "Sat Sri Akaal!",
+    "Merhaba!",,
+    "Selamat Datang!",
+    "Sawubona!",
+    "Shalom!",
+    "Hello!"
+  ];
+
+  const greetingDiv = document.getElementById('greeting');
+  let index = 0;
+
+  function showGreeting() {
+    if (index < greetings.length) {
+      greetingDiv.textContent = greetings[index];
+      greetingDiv.style.animation = 'none';
+      void greetingDiv.offsetWidth;
+      greetingDiv.style.animation = 'fadeInZoom 0.2s ease forwards';
+      index++;
+    } else {
+      clearInterval(interval); // Stop the loop
+      setTimeout(() => {
+        window.location.href = "home.html"; // Redirect after last greeting
+      }, 500); // Slight delay for the final greeting to show
+    }
+  }
+
+  const interval = setInterval(showGreeting, 150);
+  window.addEventListener('load', showGreeting);
+
+  document.body.addEventListener('click', () => {
+    window.location.href = "home.html";
+  });
+</script>
+
+
+</body>
+</html>
