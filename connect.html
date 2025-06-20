@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connect | Muskan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0e0e0e;
+      --text: #ffffff;
+      --muted: #777777;
+      --accent: #7873f5;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      animation: fadeSlideDown 0.8s ease-out;
+      background: transparent;
+      z-index: 10;
+    }
+
+    header div {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #f2ecf0;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      position: relative;
+      transition: transform 0.2s ease, color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      transform: scale(1.1);
+      color: var(--accent);
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -4px;
+      background-color: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1200px;
+      margin: 100px auto;
+      padding: 0 60px;
+      gap: 80px;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .contact-info h1 {
+      font-size: 48px;
+      margin-bottom: 30px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      background: linear-gradient(90deg, #7873f5, #ff6ec4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeInLeft 1.2s ease;
+    }
+
+    .contact-info p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 500px;
+      margin-bottom: 40px;
+      animation: fadeInLeft 1.4s ease;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 15px;
+    }
+
+    .contact-links a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      width: fit-content;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .contact-links a:hover {
+      color: var(--accent);
+      transform: translateX(6px);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      animation: bounceIn 1.5s ease;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      background: #1a1a1a;
+      color: var(--text);
+      border: 1px solid #333;
+      padding: 16px;
+      font-size: 14px;
+      border-radius: 4px;
+      resize: vertical;
+      outline: none;
+      transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 10px #7873f5;
+    }
+
+    .contact-form button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 16px;
+      font-weight: 600;
+      font-size: 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #5d57e0;
+      transform: scale(1.05);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 60px;
+      color: #444;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+        padding: 0 30px;
+      }
+
+      .contact-info h1 {
+        font-size: 36px;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeSlideDown {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInLeft {
+      from { transform: translateX(-50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      60% { transform: scale(1.1); opacity: 1; }
+      80% { transform: scale(0.95); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>Portfolio</div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact-wrapper">
+    <section class="contact-info">
+      <h1>Let’s Work Together</h1>
+      <p>
+        Whether you're launching a new product, revamping your brand, or looking for a fresh design perspective — I'm here to collaborate, build, and bring ideas to life with clarity and creativity.
+      </p>
+
+      <div class="contact-links">
+        <a href="mailto:muskan@example.com">muskanlata431@gmail.com</a>
+        <a href="https://www.linkedin.com/in/muskan-bhagat-603628278/" target="_blank">linkedin</a>
+      </div>
+    </section>
+
+    <section>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+</body>
+</html>

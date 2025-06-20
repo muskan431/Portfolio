@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prasikshan – Employee Training System</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background-color: #0f0f0f;
+      font-family: 'Roboto', sans-serif;
+      color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 950px;
+      background: #0f0f0f;
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #ebd8ad, #ff842d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      margin-bottom: 25px;
+      border-bottom: 1px solid #de7f1f;
+      padding-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #6d5206;
+      margin-top: 25px;
+      margin-bottom: 8px;
+    }
+
+    p, li {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    li {
+      margin-bottom: 6px;
+      color: #ddd;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e9ddc4;
+      margin: 25px 0;
+    }
+
+    .images-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+      justify-content: center;
+    }
+
+    .image-card {
+      width: 280px;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .image-title {
+      text-align: center;
+      font-size: 13px;
+      color: #ffb3f0;
+      margin-top: 8px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .image-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Prasikshan – Employee Training & Registration Management System</h2>
+
+    <h3>Project Summary:</h3>
+    <p>
+      Prasikshan is a comprehensive LAN-based web application developed to streamline the employee registration, training, and course management process within institutional environments like DRDO SSPL. Designed with both functionality and user experience in mind, the system simplifies administrative workflows and ensures seamless handling of training-related operations.
+    </p>
+
+    <hr>
+
+    <h3>Core Features:</h3>
+    <ul>
+      <li>Employee Registration Module with personal, departmental, and qualification details</li>
+      <li>Training Form Submission with course selection, completion status, and file upload</li>
+      <li>Admin Portal with functionalities to add, edit, archive, and delete training courses</li>
+      <li>Notice Board for publishing training updates and organizational announcements</li>
+      <li>Print & Preview Functionality for submitted forms and reports</li>
+      <li>Search and Filter Options for quick access to employee records and training logs</li>
+      <li>Role-Based Login System for Admins and Employees</li>
+      <li>Training Completion Verification and certification generation (optional)</li>
+    </ul>
+
+    <hr>
+
+    <h3>Frontend Technologies:</h3>
+    <ul>
+      <li>HTML5, CSS3, JavaScript for building an interactive user interface</li>
+      <li>Bootstrap for responsive and clean layouts</li>
+      <li>Dynamic Form Validation and status indicators</li>
+      <li>Modal Popups and data tables for better data presentation and interaction</li>
+    </ul>
+
+    <hr>
+
+    <h3>Backend & Server-Side:</h3>
+    <ul>
+      <li>PHP / Python (Flask) for backend processing (based on stack used)</li>
+      <li>MySQL / SQLite as the database for managing user and training data</li>
+      <li>Session Management for secure access control</li>
+      <li>IIS Server for LAN-based deployment without internet dependency</li>
+    </ul>
+
+    <hr>
+
+    <h3>Design Approach:</h3>
+    <ul>
+      <li>Focused on usability and clarity for both technical and non-technical users</li>
+      <li>Clean, modular architecture for easy updates and maintenance</li>
+      <li>Dashboard-first design with categorized menus for form handling, notices, and course actions</li>
+    </ul>
+
+    <hr>
+
+    <h3>Impact & Outcome:</h3>
+    <p>
+      Prasikshan digitized the internal employee training workflow, eliminating manual paperwork and reducing administrative effort. It enabled real-time monitoring of training progress and fostered accountability and transparency in employee development. The platform was successfully deployed over a secure LAN environment, ensuring reliability and data control.
+    </p>
+
+    <!-- Image Previews -->
+    <div class="images-row">
+      <div class="image-card">
+        <img src="prasik1.jpg" alt="Dashboard Screenshot">
+        <div class="image-title">Prasikshan Portal</div>
+      </div>
+      <div class="image-card">
+        <img src="prasik2.jpg" alt="Training Form Screenshot">
+        <div class="image-title">Notice Dasboard</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

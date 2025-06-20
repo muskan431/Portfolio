@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Slide Decks & Workflow Mapping</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background-color: #0f0f0f;
+      font-family: 'Roboto', sans-serif;
+      color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      background: #0f0f0f;
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #eb4bc8, #7c0576);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      margin-bottom: 25px;
+      border-bottom: 1px solid #490c52;
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #9020bd;
+      margin-top: 25px;
+      margin-bottom: 8px;
+    }
+
+    p, li {
+      font-size: 13px;
+      line-height: 1.6;
+      color:#ddd;
+    }
+
+    ul {
+      margin-left: 18px;
+      margin-bottom: 16px;
+    }
+
+    li {
+      margin-bottom: 6px;
+      line-height: 1.5;
+      color: #ddd;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #d644ca;
+      margin: 25px 0;
+    }
+
+    .decks-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+      justify-content: center;
+    }
+
+    .deck-column {
+      width: 280px;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      height: 160px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .slideshow-container img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: none;
+      border-radius: 8px;
+    }
+
+    .slideshow-container img.active {
+      display: block;
+    }
+
+    .deck-title {
+      font-size: 14px;
+      color: #ff92ea;
+      margin-top: 12px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
+      .decks-row {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .deck-column {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Slide Decks & Workflow Mapping</h2>
+
+    <h3>Project Summary:</h3>
+    <p>
+      I created visually engaging slide decks and clear workflow diagrams to support institutional documentation, employee training, and strategic planning processes. These assets were designed to simplify complex procedures and enhance communication across teams.
+    </p>
+
+    <hr>
+
+    <h3>Key Features:</h3>
+    <ul>
+      <li>Professional slide presentations for internal meetings, onboarding, and project overviews</li>
+      <li>Workflow diagrams illustrating step-by-step processes, system architecture, and data flows</li>
+      <li>Use of color-coded layouts, icons, and illustrations for better comprehension</li>
+      <li>Modular templates to allow quick edits and reuse for future documentation</li>
+      <li>Integration of infographics, timelines, and flowcharts to represent logic and structure effectively</li>
+    </ul>
+
+    <hr>
+
+    <h3>Tools & Technologies Used:</h3>
+    <ul>
+      <li>Microsoft PowerPoint, Google Slides – for presentation decks</li>
+      <li>Lucidchart, Draw.io, Canva, Figma – for workflow diagrams and process flows</li>
+      <li>Adobe Illustrator – for custom icons and illustrations</li>
+      <li>Use of consistent typography, branding, and visual hierarchy for clarity</li>
+    </ul>
+
+    <hr>
+
+    <h3>Impact & Outcome:</h3>
+    <p>
+      These materials improved team understanding, reduced onboarding time, and supported smooth communication of technical and administrative processes. The visual clarity and structured approach helped in aligning departments and enhancing documentation quality.
+    </p>
+
+    <div class="decks-row">
+      <!-- Deck 1 -->
+      <div class="deck-column">
+        <div class="slideshow-container" id="deck1">
+          <img src="ayur1.PNG" class="active" alt="Slide 1">
+          <img src="ayur2.PNG" alt="Slide 2">
+          <img src="ayur3.PNG" alt="Slide 3">
+        </div>
+        <div class="deck-title">Ayurvedaa</div>
+      </div>
+
+      <!-- Deck 2 -->
+      <div class="deck-column">
+        <div class="slideshow-container" id="deck2">
+          <img src="per1.PNG" class="active" alt="Slide 1">
+          <img src="per2.PNG" alt="Slide 2">
+          <img src="per3.PNG" alt="Slide 3">
+        </div>
+        <div class="deck-title">Personality</div>
+      </div>
+
+      <!-- Deck 3 -->
+      <div class="deck-column">
+        <div class="slideshow-container" id="deck3">
+          <img src="tes1.PNG" class="active" alt="Slide 1">
+          <img src="tes2.PNG" alt="Slide 2">
+          <img src="tes3.PNG" alt="Slide 3">
+        </div>
+        <div class="deck-title">Testing</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function startSlideshow(containerId) {
+      const slides = document.querySelectorAll(`#${containerId} img`);
+      let index = 0;
+      setInterval(() => {
+        slides[index].classList.remove("active");
+        index = (index + 1) % slides.length;
+        slides[index].classList.add("active");
+      }, 2500);
+    }
+
+    startSlideshow("deck1");
+    startSlideshow("deck2");
+    startSlideshow("deck3");
+  </script>
+</body>
+</html>

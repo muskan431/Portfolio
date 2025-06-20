@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0d0d0d;
+      color: white;
+      overflow: hidden;
+      position: relative;
+      height: 100vh;
+    }
+
+    header {
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      animation: fadeInDown 1s ease forwards;
+      z-index: 2;
+      position: relative;
+    }
+
+    header div {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #f2ecf0;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background: white;
+      transition: width 0.3s;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 60px;
+      min-height: 100vh;
+      height: calc(100vh - 100px); 
+      gap: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .left {
+      flex: 1;
+      animation: fadeInLeft 1.5s ease forwards;
+    }
+
+    .intro h2 {
+      font-weight: 600;
+      color: #ccc;
+    }
+
+    .intro h1 {
+      font-size: 48px;
+      margin: 10px 0;
+    }
+
+    .intro h1 span {
+      background: linear-gradient(90deg, #7873f5, #ff6ec4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+
+    .intro h3 {
+      font-weight: 400;
+      color: #aaa;
+    }
+
+    .animated-line {
+      height: 1px;
+      background-color: #ffffff;
+      width: 0%;
+      animation: growLine 2s ease-out forwards;
+      margin: 30px 0 20px 0;
+    }
+
+    .right {
+      flex: 1;
+      margin-top: 240px;
+      animation: fadeInUp 2s ease forwards;
+    }
+
+    #typewriter-text {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #e0e0e0;
+    }
+
+    #typing-role {
+      font-weight: 400;
+      color: #aaa;
+      border-right: 2px solid #fff;
+      padding-right: 5px;
+      animation: blink 0.7s infinite;
+    }
+
+    .curve-animation {
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 800px;
+      height: 800px;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .curve-animation path {
+      fill: none;
+      stroke: white;
+      stroke-width: 1.5;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: draw 4s ease-in-out infinite;
+      animation-delay: calc(var(--i) * 0.2s);
+    }
+
+    /* Animations */
+    @keyframes blink {
+      0%, 100% { border-color: #fff; }
+      50% { border-color: transparent; }
+    }
+
+    @keyframes growLine {
+      from { width: 0%; opacity: 0; }
+      to { width: 100%; opacity: 1; }
+    }
+
+    @keyframes draw {
+      0%   { stroke-dashoffset: 1000; }
+      50%  { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 1000; }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(60px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>Portfolio</div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="connect.html">Connect</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="left">
+      <div class="intro">
+        <h2>Hey There,</h2>
+        <h1>I’m <span>Muskan</span></h1>
+        <h3><span id="typing-role"></span></h3>
+      </div>
+      <div class="animated-line"></div>
+    </div>
+
+    <div class="right">
+      <p id="typewriter-text"></p>
+    </div>
+
+    <!-- SVG Curves -->
+    <svg class="curve-animation" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid meet">
+      <!-- 17 curved paths -->
+      <path style="--i:3" d="M30,700 a370,370 0 0,1 740,0" />
+      <path style="--i:4" d="M40,700 a360,360 0 0,1 720,0" />
+      <path style="--i:5" d="M50,700 a350,350 0 0,1 700,0" />
+      <path style="--i:6" d="M60,700 a340,340 0 0,1 680,0" />
+      <path style="--i:7" d="M70,700 a330,330 0 0,1 660,0" />
+      <path style="--i:8" d="M80,700 a320,320 0 0,1 640,0" />
+      <path style="--i:9" d="M90,700 a310,310 0 0,1 620,0" />
+      <path style="--i:10" d="M100,700 a300,300 0 0,1 600,0" />
+      <path style="--i:11" d="M110,700 a290,290 0 0,1 580,0" />
+      <path style="--i:12" d="M120,700 a280,280 0 0,1 560,0" />
+      <path style="--i:13" d="M130,700 a270,270 0 0,1 540,0" />
+      <path style="--i:14" d="M140,700 a260,260 0 0,1 520,0" />
+      <path style="--i:15" d="M150,700 a250,250 0 0,1 500,0" />
+      <path style="--i:16" d="M160,700 a240,240 0 0,1 480,0" />
+      <path style="--i:17" d="M170,700 a230,230 0 0,1 460,0" />
+    </svg>
+  </div>
+
+  <script>
+    const text = `I’m Muskan, a dedicated UI/UX designer, frontend developer, and graphic designer. I specialize in crafting clean, user-focused interfaces and visually striking brand identities that help businesses stand out in a crowded digital space.<br><br>
+    Whether it’s designing seamless websites or creating compelling graphics and logos, I strive to blend functionality with creativity to deliver work that resonates and endures.<br><br>
+    Beyond the screen, you’ll find me diving into global cuisines, reflecting on philosophy books, or recharging with intense combat games that fuel my creative edge.`;
+
+    const target = document.getElementById("typewriter-text");
+    let index = 0;
+
+    function typePara() {
+      if (index < text.length) {
+        if (text[index] === "<") {
+          const endTag = text.indexOf(">", index);
+          target.innerHTML += text.slice(index, endTag + 1);
+          index = endTag + 1;
+        } else {
+          target.innerHTML += text[index];
+          index++;
+        }
+        setTimeout(typePara, 2);
+      }
+    }
+    window.onload = typePara;
+
+    const roles = [" a Front End Developer", "a UI/UX Designer", "a Graphic Designer"];
+    const roleElement = document.getElementById("typing-role");
+    let roleIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeRole() {
+      const current = roles[roleIndex];
+      if (deleting) {
+        charIndex--;
+        roleElement.textContent = current.substring(0, charIndex);
+        if (charIndex === 0) {
+          deleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+          setTimeout(typeRole, 300);
+        } else {
+          setTimeout(typeRole, 50);
+        }
+      } else {
+        charIndex++;
+        roleElement.textContent = current.substring(0, charIndex);
+        if (charIndex === current.length) {
+          deleting = true;
+          setTimeout(typeRole, 1000);
+        } else {
+          setTimeout(typeRole, 100);
+        }
+      }
+    }
+
+    typeRole();
+  </script>
+</body>
+</html>
